@@ -66,9 +66,20 @@ for y in button_y_positions:
 # Snowman: eyes
 y_offset = 10
 x_seperation = 15
+
 for x in x_position-x_seperation, x_position+x_seperation:
     make_circle(snowman, x, y_positions[0] + y_offset, 20, "green")
     make_circle(snowman, x, y_positions[0] + y_offset, 10, "black")
+
+# Snowman: hat
+hat = turtle.Turtle()
+size = 75
+hat.color("red")
+hat.penup()
+make_circle(snowman, x+5, y_positions[0] + y_offset+45, 10, "white")
+
+
+# Snowman: hat
 
 # Snowman: nose
 snowman.color("orange")
@@ -76,8 +87,9 @@ snowman.setposition(x_position - 10, y_positions[0]-y_offset)
 snowman.shape("triangle")
 snowman.setheading(200)
 snowman.turtlesize(0.5, 2.5)
-
 window.tracer(0)
+# Snowman: nose
+
 
 # Ground
 grass = turtle.Turtle()
@@ -95,6 +107,12 @@ grass.end_fill()
 ground = turtle.Turtle()
 for x in range(int(-width/2), int(width/2), int(width/200)):
     make_circle(ground, x, -180, random.randint(5, 20), "white")
+
+
+hat.setposition(x_position+12, y_positions[0]+y_offset*3.5)
+hat.shape("triangle")
+hat.setheading(70)
+hat.turtlesize(3, 2)
 
 text = turtle.Turtle()
 text.color("red")
